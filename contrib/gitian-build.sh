@@ -10,14 +10,14 @@ setupenv=false
 
 # Systems to build
 linux=true
-windows=true
-osx=true
+windows=false
+osx=false
 
 # Other Basic variables
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/pivx-project/pivx
+url=https://github.com/mwaser/pivx
 proc=2
 mem=2000
 lxc=true

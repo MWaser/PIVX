@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\contrib",
+    "\\contrib\\gitian-descriptors",
+    "\\docker"
   ],
+  "SelectedNode": "\\contrib\\gitian-build.sh",
   "PreviewInSolutionExplorer": false
 }
