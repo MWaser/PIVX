@@ -44,8 +44,14 @@ RUN git clone -b v3.0.6 https://github.com/mwaser/pivx.git
 # ./configure  --enable-debug
 # make
 # sudo make install
-# cd /home/ubuntu
-# wget https://raw.githubusercontent.com/PIVX-Project/PIVX/master/contrib/debian/examples/pivx.conf
+# cd /home/ubuntu/.pivx
+# rm pivx.conf
+# wget https://raw.githubusercontent.com/MWaser/PIVX/3.0/docker/pivx.conf
+# cd ..
+# pivxd -debug
+# -- close window
+# docker exec -it yourcontainerhere bash
+# cd /home/ubuntu/.pivx
 
 
 

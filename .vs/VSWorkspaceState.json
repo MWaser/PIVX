@@ -5,8 +5,10 @@
     "\\contrib\\debian",
     "\\contrib\\debian\\examples",
     "\\contrib\\gitian-descriptors",
-    "\\docker"
+    "\\docker",
+    "\\src",
+    "\\src\\libzerocoin"
   ],
-  "SelectedNode": "\\docker\\pivx.conf",
+  "SelectedNode": "\\docker\\alertkey.hex",
   "PreviewInSolutionExplorer": false
 }
