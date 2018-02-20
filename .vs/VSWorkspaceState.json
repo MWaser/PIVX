@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\contrib",
+    "\\contrib\\debian",
+    "\\contrib\\debian\\examples",
     "\\contrib\\gitian-descriptors",
     "\\docker"
   ],
-  "SelectedNode": "\\contrib\\gitian-build.sh",
+  "SelectedNode": "\\docker\\pivx.conf",
   "PreviewInSolutionExplorer": false
 }
