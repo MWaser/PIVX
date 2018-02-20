@@ -5,10 +5,9 @@
     "\\contrib\\debian",
     "\\contrib\\debian\\examples",
     "\\contrib\\gitian-descriptors",
-    "\\docker",
     "\\src",
     "\\src\\libzerocoin"
   ],
-  "SelectedNode": "\\docker\\alertkey.hex",
+  "SelectedNode": "\\src\\chainparams.cpp",
   "PreviewInSolutionExplorer": false
 }

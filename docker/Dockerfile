@@ -39,7 +39,7 @@ USER ubuntu
 
 RUN git clone -b v3.0.6 https://github.com/mwaser/pivx.git
 
-# cd pivx
+# cd /shared/pivx
 # ./autogen.sh
 # ./configure  --enable-debug
 # make
