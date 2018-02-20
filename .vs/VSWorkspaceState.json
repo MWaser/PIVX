@@ -1,13 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\contrib",
-    "\\contrib\\debian",
     "\\contrib\\debian\\examples",
-    "\\contrib\\gitian-descriptors",
-    "\\src",
-    "\\src\\libzerocoin"
+    "\\docker",
+    "\\src"
   ],
-  "SelectedNode": "\\src\\chainparams.cpp",
+  "SelectedNode": "\\qa",
   "PreviewInSolutionExplorer": false
 }
