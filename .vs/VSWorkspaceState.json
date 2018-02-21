@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\contrib\\debian\\examples",
     "\\docker",
     "\\src"
   ],
-  "SelectedNode": "\\qa",
+  "SelectedNode": "\\src\\chainparams.cpp",
   "PreviewInSolutionExplorer": false
 }

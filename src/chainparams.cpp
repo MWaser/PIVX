@@ -154,24 +154,24 @@ public:
 		genesis.nVersion = 1;
 		genesis.nTime = 1519135358;
 		genesis.nBits = 0x1e0ffff0;
-		genesis.nNonce = 2402015;
+		genesis.nNonce = 3403795;
 
-		hashGenesisBlock = uint256("0x01");
-		if (true && genesis.GetHash() != hashGenesisBlock)
-		{
-			printf("recalculating params for mainnet.\n");
-			printf("old mainnet genesis nonce: %d\n", genesis.nNonce);
-			printf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
-			// deliberately empty for loop finds nonce value.
-			for (genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++) {}
-			printf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-			printf("new mainnet genesis nonce: %d\n", genesis.nNonce);
-			printf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-		}
+		//hashGenesisBlock = uint256("0x01");
+		//if (true && genesis.GetHash() != hashGenesisBlock)
+		//{
+		//	printf("recalculating params for mainnet.\n");
+		//	printf("old mainnet genesis nonce: %d\n", genesis.nNonce);
+		//	printf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
+		//	// deliberately empty for loop finds nonce value.
+		//	for (genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++) {}
+		//	printf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+		//	printf("new mainnet genesis nonce: %d\n", genesis.nNonce);
+		//	printf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+		//} 
 
 		hashGenesisBlock = genesis.GetHash();
-		assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
-		assert(genesis.hashMerkleRoot == uint256("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+		assert(hashGenesisBlock == uint256("0x00000d42bca8ad68215a817b6cb231ad41a199ede82e38e7f538a56dc11ca826"));
+		assert(genesis.hashMerkleRoot == uint256("0x783f906fba3fc148b85773b98acf1e6715bba5debb07700a674585600fdad69e"));
 
 		vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "pivx.seed.fuzzbawls.pw"));     // Primary DNS Seeder from Fuzzbawls
 		vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "pivx.seed2.fuzzbawls.pw"));    // Secondary DNS Seeder from Fuzzbawls
@@ -352,12 +352,12 @@ public:
 		if (true && genesis.GetHash() != hashGenesisBlock)
 		{
 			printf("recalculating params for regtest.\n");
-			printf("old regtest genesis nonce: %s\d", genesis.nNonce);
+			printf("old regtest genesis nonce: %d\n", genesis.nNonce);
 			printf("old regtest genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
 			// deliberately empty for loop finds nonce value.
 			for (genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++) {}
 			printf("new regtest genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-			printf("new regtest genesis nonce: %s\d", genesis.nNonce);
+			printf("new regtest genesis nonce: %d\n", genesis.nNonce);
 			printf("new regtest genesis hash: %s\n", genesis.GetHash().ToString().c_str());
 		}
 
