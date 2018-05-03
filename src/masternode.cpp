@@ -74,7 +74,7 @@ CMasternode::CMasternode()
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
     protocolVersion = PROTOCOL_VERSION;
-    nLastDsq = 0;
+    nLastDsqx = 0;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
     lastTimeChecked = 0;
@@ -99,7 +99,7 @@ CMasternode::CMasternode(const CMasternode& other)
     allowFreeTx = other.allowFreeTx;
     nActiveState = MASTERNODE_ENABLED,
     protocolVersion = other.protocolVersion;
-    nLastDsq = other.nLastDsq;
+    nLastDsqx = other.nLastDsqx;
     nScanningErrorCount = other.nScanningErrorCount;
     nLastScanningErrorBlockHeight = other.nLastScanningErrorBlockHeight;
     lastTimeChecked = 0;
@@ -124,7 +124,7 @@ CMasternode::CMasternode(const CMasternodeBroadcast& mnb)
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
     protocolVersion = mnb.protocolVersion;
-    nLastDsq = mnb.nLastDsq;
+    nLastDsqx = mnb.nLastDsqx;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
     lastTimeChecked = 0;
@@ -340,7 +340,7 @@ CMasternodeBroadcast::CMasternodeBroadcast()
     unitTest = false;
     allowFreeTx = true;
     protocolVersion = PROTOCOL_VERSION;
-    nLastDsq = 0;
+    nLastDsqx = 0;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
 }
@@ -360,7 +360,7 @@ CMasternodeBroadcast::CMasternodeBroadcast(CService newAddr, CTxIn newVin, CPubK
     unitTest = false;
     allowFreeTx = true;
     protocolVersion = protocolVersionIn;
-    nLastDsq = 0;
+    nLastDsqx = 0;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
 }
@@ -380,7 +380,7 @@ CMasternodeBroadcast::CMasternodeBroadcast(const CMasternode& mn)
     unitTest = mn.unitTest;
     allowFreeTx = mn.allowFreeTx;
     protocolVersion = mn.protocolVersion;
-    nLastDsq = mn.nLastDsq;
+    nLastDsqx = mn.nLastDsqx;
     nScanningErrorCount = mn.nScanningErrorCount;
     nLastScanningErrorBlockHeight = mn.nLastScanningErrorBlockHeight;
 }
