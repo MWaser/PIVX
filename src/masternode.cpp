@@ -14,7 +14,7 @@
 // keep track of the scanning errors I've seen
 map<uint256, int> mapSeenMasternodeScanningErrors;
 // cache block hashes as we calculate them
-std::map<int64_t, uint256> mapCacheBlockHashes;
+std::map<int64_t, uint256> mapCacheBlockHashesX;
 
 //Get the last hash that matches the modulus given. Processed in reverse order
 bool GetBlockHash(uint256& hash, int nBlockHeight)
@@ -24,8 +24,8 @@ bool GetBlockHash(uint256& hash, int nBlockHeight)
     if (nBlockHeight == 0)
         nBlockHeight = chainActive.Tip()->nHeight;
 
-    if (mapCacheBlockHashes.count(nBlockHeight)) {
-        hash = mapCacheBlockHashes[nBlockHeight];
+    if (mapCacheBlockHashesX.count(nBlockHeight)) {
+        hash = mapCacheBlockHashesX[nBlockHeight];
         return true;
     }
 
@@ -42,7 +42,7 @@ bool GetBlockHash(uint256& hash, int nBlockHeight)
     for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
         if (n >= nBlocksAgo) {
             hash = BlockReading->GetBlockHash();
-            mapCacheBlockHashes[nBlockHeight] = hash;
+            mapCacheBlockHashesX[nBlockHeight] = hash;
             return true;
         }
         n++;
@@ -74,7 +74,7 @@ CMasternode::CMasternode()
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
     protocolVersion = PROTOCOL_VERSION;
-    nLastDsqx = 0;
+    nLastDsq = 0;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
     lastTimeChecked = 0;
@@ -99,7 +99,7 @@ CMasternode::CMasternode(const CMasternode& other)
     allowFreeTx = other.allowFreeTx;
     nActiveState = MASTERNODE_ENABLED,
     protocolVersion = other.protocolVersion;
-    nLastDsqx = other.nLastDsqx;
+    nLastDsq = other.nLastDsq;
     nScanningErrorCount = other.nScanningErrorCount;
     nLastScanningErrorBlockHeight = other.nLastScanningErrorBlockHeight;
     lastTimeChecked = 0;
@@ -124,7 +124,7 @@ CMasternode::CMasternode(const CMasternodeBroadcast& mnb)
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
     protocolVersion = mnb.protocolVersion;
-    nLastDsqx = mnb.nLastDsqx;
+    nLastDsq = mnb.nLastDsq;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
     lastTimeChecked = 0;
@@ -229,7 +229,7 @@ void CMasternode::Check(bool forceCheck)
     activeState = MASTERNODE_ENABLED; // OK
 }
 
-int64_t CMasternode::SecondsSincePayment()
+int64_t CMasternode::()
 {
     CScript pubkeyScript;
     pubkeyScript = GetScriptForDestination(pubKeyCollateralAddress.GetID());
@@ -340,7 +340,7 @@ CMasternodeBroadcast::CMasternodeBroadcast()
     unitTest = false;
     allowFreeTx = true;
     protocolVersion = PROTOCOL_VERSION;
-    nLastDsqx = 0;
+    nLastDsq = 0;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
 }
@@ -360,7 +360,7 @@ CMasternodeBroadcast::CMasternodeBroadcast(CService newAddr, CTxIn newVin, CPubK
     unitTest = false;
     allowFreeTx = true;
     protocolVersion = protocolVersionIn;
-    nLastDsqx = 0;
+    nLastDsq = 0;
     nScanningErrorCount = 0;
     nLastScanningErrorBlockHeight = 0;
 }
@@ -380,7 +380,7 @@ CMasternodeBroadcast::CMasternodeBroadcast(const CMasternode& mn)
     unitTest = mn.unitTest;
     allowFreeTx = mn.allowFreeTx;
     protocolVersion = mn.protocolVersion;
-    nLastDsqx = mn.nLastDsqx;
+    nLastDsq = mn.nLastDsq;
     nScanningErrorCount = mn.nScanningErrorCount;
     nLastScanningErrorBlockHeight = mn.nLastScanningErrorBlockHeight;
 }
