@@ -229,7 +229,7 @@ void CMasternode::Check(bool forceCheck)
     activeState = MASTERNODE_ENABLED; // OK
 }
 
-int64_t CMasternode::()
+int64_t CMasternode::SecondsSincePayment()
 {
     CScript pubkeyScript;
     pubkeyScript = GetScriptForDestination(pubKeyCollateralAddress.GetID());
