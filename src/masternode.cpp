@@ -585,7 +585,6 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
         if (!lockMain) {
             // not mnb fault, let it to be checked again later
             mnodeman.mapSeenMasternodeBroadcast.erase(GetHash());
-            masternodeSync.mapSeenSyncMNB.erase(GetHash());
             return false;
         }
 
@@ -602,7 +601,6 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
         LogPrint("masternode","mnb - Input must have at least %d confirmations\n", MASTERNODE_MIN_CONFIRMATIONS);
         // maybe we miss few blocks, let this mnb to be checked again later
         mnodeman.mapSeenMasternodeBroadcast.erase(GetHash());
-        masternodeSync.mapSeenSyncMNB.erase(GetHash());
         return false;
     }
 
