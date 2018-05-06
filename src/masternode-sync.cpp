@@ -65,7 +65,6 @@ void CMasternodeSync::Reset()
     lastMasternodeList = 0;
     lastMasternodeWinner = 0;
     lastBudgetItem = 0;
-    mapSeenSyncMNB.clear();
     mapSeenSyncMNW.clear();
     mapSeenSyncBudget.clear();
     lastFailure = 0;
@@ -85,15 +84,6 @@ void CMasternodeSync::Reset()
 
 void CMasternodeSync::AddedMasternodeList(uint256 hash)
 {
-    if (mnodeman.mapSeenMasternodeBroadcast.count(hash)) {
-        if (mapSeenSyncMNB[hash] < MASTERNODE_SYNC_THRESHOLD) {
-            lastMasternodeList = GetTime();
-            mapSeenSyncMNB[hash]++;
-        }
-    } else {
-        lastMasternodeList = GetTime();
-        mapSeenSyncMNB.insert(make_pair(hash, 1));
-    }
 }
 
 void CMasternodeSync::AddedMasternodeWinner(uint256 hash)

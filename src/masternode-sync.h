@@ -29,7 +29,6 @@ extern CMasternodeSync masternodeSync;
 class CMasternodeSync
 {
 public:
-    std::map<uint256, int> mapSeenSyncMNB;
     std::map<uint256, int> mapSeenSyncMNW;
     std::map<uint256, int> mapSeenSyncBudget;
 
